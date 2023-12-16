@@ -18,33 +18,42 @@ class _DataWarungState extends State<DataWarungPage> {
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
       height: 110,
-      color: Colors.amberAccent,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Nama Warung: ${warung['namawarung'].toString()}",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            "Alamat Warung: ${warung['alamat'].toString()}",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            "Jumlah Karyawan: ${warung['jmlhkaryawan'].toString()}",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-        ],
+      color: Color.fromARGB(255, 254, 138, 105),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Nama Warung: ${warung['namawarung'].toString()}",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Lokasi Warung: ${warung['lokasi'].toString()}",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Alamat Warung: ${warung['alamat'].toString()}",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Jumlah Karyawan: ${warung['jmlhkaryawan'].toString()}",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+          ],
+        ),
       ),
     );
   }
