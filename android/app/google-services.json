@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107878050458",
+    "project_id": "warmindotugas",
+    "storage_bucket": "warmindotugas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107878050458:android:59bfa03199bcdcf7690d23",
+        "android_client_info": {
+          "package_name": "com.example.warmindo_tugas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBNXwhSsuw4gfJdVBhq6ky6J8-Ik8g1dY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
