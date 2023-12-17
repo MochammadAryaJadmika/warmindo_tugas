@@ -130,7 +130,7 @@ class _DataPenggunaState extends State<DataPenggunaInsert> {
   
                   },
                   child: const Text('Submit Data Pengguna'),
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 187, 133, 207),
                   textColor: Colors.white,
                   minWidth: 300,
                   height: 40,

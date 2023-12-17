@@ -17,8 +17,8 @@ class _DataWarungState extends State<DataWarungPage> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 110,
-      color: Color.fromARGB(255, 254, 138, 105),
+      height: 140,
+      color: Color.fromARGB(255, 217, 192, 226),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

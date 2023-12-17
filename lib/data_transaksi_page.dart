@@ -17,8 +17,8 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 110,
-      color: Color.fromARGB(255, 254, 138, 105),
+      height: 180,
+      color: Color.fromARGB(255, 217, 192, 226),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
               height: 5,
             ),
             Text(
-              "Total Transaksi: ${transaksi['totaltransaksi'].toString()}",
+              "Nama Pelanggan: ${transaksi['namapelanggan'].toString()}",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             ),
             const SizedBox(
@@ -40,6 +40,20 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
             ),
             Text(
               "Tanggal dan Waktu Transaksi: ${transaksi['tgl_waktu'].toString()}",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Total Transaksi: ${transaksi['totaltransaksi'].toString()}",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Metode Pembayaran: ${transaksi['mtd_pembayaran'].toString()}",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             ),
             const SizedBox(

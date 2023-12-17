@@ -19,8 +19,8 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 110,
-      color: Color.fromARGB(255, 187, 184, 183),
+      height: 170,
+      color: Color.fromARGB(255, 217, 192, 226),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -70,8 +70,7 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
                     children: [
                       Icon(
                         Icons.edit,
-                        color: Theme.of(context).primaryColor,
-                      ),
+                        color: Color.fromARGB(255, 88, 102, 108)      ),
                     ],
                   ),
                 ),

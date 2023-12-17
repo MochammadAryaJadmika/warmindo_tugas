@@ -20,8 +20,8 @@ class _DataRoleFetchState extends State<DataRoleFetch> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 110,
-      color: Color.fromARGB(255, 187, 184, 183),
+      height: 140,
+      color: Color.fromARGB(255, 217, 192, 226),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +57,7 @@ class _DataRoleFetchState extends State<DataRoleFetch> {
                     children: [
                       Icon(
                         Icons.edit,
-                        color: Theme.of(context).primaryColor,
+                        color: Color.fromARGB(255, 88, 102, 108) 
                       ),
                     ],
                   ),
