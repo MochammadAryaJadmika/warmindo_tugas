@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DataWarungPage extends StatefulWidget {
   const DataWarungPage({Key? key}) : super(key: key);
@@ -17,8 +18,11 @@ class _DataWarungState extends State<DataWarungPage> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 140,
-      color: Color.fromARGB(255, 217, 192, 226),
+      height: 150,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 206, 167, 236),
+        borderRadius: BorderRadius.circular(15.0), // Atur nilai sesuai keinginan
+      ),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,28 +30,44 @@ class _DataWarungState extends State<DataWarungPage> {
           children: [
             Text(
               "Nama Warung: ${warung['namawarung'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
-              "Lokasi Warung: ${warung['lokasi'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              "Lokasi: ${warung['lokasi'].toString()}",
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
-              "Alamat Warung: ${warung['alamat'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              "Alamat: ${warung['alamat'].toString()}",
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "Jumlah Karyawan: ${warung['jmlhkaryawan'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
@@ -63,6 +83,11 @@ class _DataWarungState extends State<DataWarungPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Data Warung'),
+        titleTextStyle: GoogleFonts.poppins(
+          color: Color(0xFF000000),
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: Container(
         height: double.infinity,
@@ -81,6 +106,3 @@ class _DataWarungState extends State<DataWarungPage> {
     );
   }
 }
-
-  
-

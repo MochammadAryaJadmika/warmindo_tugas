@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:warmindo_tugas/login_page.dart';
-import 'data_warung_page.dart'; // Ganti dengan nama file yang sesuai
-import 'data_transaksi_page.dart'; // Ganti dengan nama file yang sesuai
-import 'manajemen_data_page.dart'; // Ganti dengan nama file yang sesuai
+import 'package:warmindo_tugas/data_transaksi_page.dart';
+import 'package:warmindo_tugas/data_warung_page.dart';
+// import 'package:warmindo/login_page.dart';
+import 'package:warmindo_tugas/manajemen_data_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -29,10 +29,16 @@ class _DashboardState extends State<DashboardPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Logged In With: $_email"),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Data Warung
+              SizedBox(
+                height: 50,
+              ),
+
+              _buildMenuCard(
+                context,
+                "Data Warung",
+                "Lihat",
+                () {
+                  // Navigasi ke halaman detail data pengguna
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -40,12 +46,14 @@ class _DashboardState extends State<DashboardPage> {
                     ),
                   );
                 },
-                child: Text("Data Warung"),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Data Transaksi
+              _buildMenuCard(
+                context,
+                "Data Transaksi",
+                "Lihat",
+                () {
+                  // Navigasi ke halaman detail data role
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -53,12 +61,14 @@ class _DashboardState extends State<DashboardPage> {
                     ),
                   );
                 },
-                child: Text("Data Transaksi"),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Manajemen Data
+              _buildMenuCard(
+                context,
+                "Manajemen Data",
+                "Lihat",
+                () {
+                  // Navigasi ke halaman tambah pengguna
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -66,26 +76,24 @@ class _DashboardState extends State<DashboardPage> {
                     ),
                   );
                 },
-                child: Text("Manajemen Data"),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  _auth.signOut();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                      ));
-                },
-                child: Text("SignOut"),
               ),
             ],
           ),
         ),
-      )
+      ),
+    );
+  }
+
+  Widget _buildMenuCard(BuildContext context, String menuTitle, String buttonLabel, VoidCallback onPressed) {
+    return Card(
+      elevation: 5,
+      child: ListTile(
+        title: Text(menuTitle),
+        trailing: ElevatedButton(
+          onPressed: onPressed,
+          child: Text(buttonLabel),
+        ),
+      ),
     );
   }
 }

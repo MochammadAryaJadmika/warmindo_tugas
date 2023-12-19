@@ -1,7 +1,9 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:warmindo_tugas/update_data_pengguna.dart';
+
 
 class DataPenggunaFetch extends StatefulWidget {
   const DataPenggunaFetch({Key? key}) : super(key: key);
@@ -19,8 +21,11 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 170,
-      color: Color.fromARGB(255, 217, 192, 226),
+      height: 200,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 206, 167, 236),
+        borderRadius: BorderRadius.circular(15.0), // Atur nilai sesuai keinginan
+      ),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,35 +33,55 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
           children: [
             Text(
               "ID Pengguna: ${pengguna['idpengguna'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "ID Role: ${pengguna['idrole'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "Username: ${pengguna['username'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "Nama Pengguna: ${pengguna['namapengguna'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "Status: ${pengguna['status'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -70,7 +95,8 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
                     children: [
                       Icon(
                         Icons.edit,
-                        color: Color.fromARGB(255, 88, 102, 108)      ),
+                        color: Color.fromARGB(255, 70, 70, 70),
+                      ),
                     ],
                   ),
                 ),
@@ -103,6 +129,11 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Data Pengguna'),
+        titleTextStyle: GoogleFonts.poppins(
+          color: Color(0xFF000000),
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: Container(
         height: double.infinity,
@@ -121,6 +152,3 @@ class _DataPenggunaFetchState extends State<DataPenggunaFetch> {
     );
   }
 }
-
-  
-

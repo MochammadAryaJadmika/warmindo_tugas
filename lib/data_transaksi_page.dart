@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DataTransaksiPage extends StatefulWidget {
   const DataTransaksiPage({Key? key}) : super(key: key);
@@ -17,8 +18,11 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
     return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 180,
-      color: Color.fromARGB(255, 217, 192, 226),
+      height: 200,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 206, 167, 236),
+        borderRadius: BorderRadius.circular(15.0), // Atur nilai sesuai keinginan
+      ),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,46 +30,82 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
           children: [
             Text(
               "ID Transaksi: ${transaksi['kodetransaksi'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              "Nama Pelanggan: ${transaksi['namapelanggan'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              "Tanggal dan Waktu Transaksi: ${transaksi['tgl_waktu'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              "Total Transaksi: ${transaksi['totaltransaksi'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              "Metode Pembayaran: ${transaksi['mtd_pembayaran'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "Shift: ${transaksi['shift'].toString()}",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             const SizedBox(
               height: 5,
             ),
+            Text(
+              "Tanggal: ${transaksi['tgl_waktu'].toString()}",
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+           
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Nama: ${transaksi['namapelanggan'].toString()}",
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Metode Transaksi: ${transaksi['mtd_pembayaran'].toString()}",
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Total Transaksi: ${transaksi['totaltransaksi'].toString()}",
+              style: GoogleFonts.poppins(
+                color: Color(0xFF000000),
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            // Text(
+            //   "Tanggal dan Waktu Transaksi: ${transaksi['tgl_waktu'].toString()}",
+            //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            // ),
+            // const SizedBox(
+            //   height: 5,
+            // ),
+            
           ],
         ),
       ),
@@ -77,6 +117,11 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Data Transaksi'),
+        titleTextStyle: GoogleFonts.poppins(
+          color: Color(0xFF000000),
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: Container(
         height: double.infinity,
@@ -95,6 +140,3 @@ class _DataTransaksiState extends State<DataTransaksiPage> {
     );
   }
 }
-
-  
-
