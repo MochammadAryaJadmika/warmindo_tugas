@@ -4,6 +4,7 @@ import 'package:warmindo_tugas/fetch_data_role.dart';
 import 'package:warmindo_tugas/insert_data_pengguna.dart';
 import 'package:warmindo_tugas/insert_data_role.dart';
 
+
 class ManajemenDataPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,27 +14,16 @@ class ManajemenDataPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Data Warung
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DataPenggunaInsert(),
-                    ),
-                  );
-                },
-                child: Text("Tambah Data Pengguna"),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Data Warung
+              _buildMenuCard(
+                context,
+                "Data Pengguna",
+                "Lihat Detail",
+                () {
+                  // Navigasi ke halaman detail data pengguna
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -41,25 +31,14 @@ class ManajemenDataPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text("Data Pengguna"),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Data Transaksi
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DataRoleInsert(),
-                    ),
-                  );
-                },
-                child: Text("Tambah Data Role"),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigasi ke halaman Data Warung
+              _buildMenuCard(
+                context,
+                "Data Role",
+                "Lihat Detail",
+                () {
+                  // Navigasi ke halaman detail data role
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -67,12 +46,54 @@ class ManajemenDataPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text("Data Role"),
+              ),
+              SizedBox(height: 20),
+              _buildMenuCard(
+                context,
+                "Tambah Pengguna",
+                "Tambah",
+                () {
+                  // Navigasi ke halaman tambah pengguna
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DataPenggunaInsert(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 20),
+              _buildMenuCard(
+                context,
+                "Tambah Role",
+                "Tambah",
+                () {
+                  // Navigasi ke halaman tambah role
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DataRoleInsert(),
+                    ),
+                  );
+                },
               ),
             ],
           ),
         ),
-      )
+      ),
+    );
+  }
+
+  Widget _buildMenuCard(BuildContext context, String menuTitle, String buttonLabel, VoidCallback onPressed) {
+    return Card(
+      elevation: 5,
+      child: ListTile(
+        title: Text(menuTitle),
+        trailing: ElevatedButton(
+          onPressed: onPressed,
+          child: Text(buttonLabel),
+        ),
+      ),
     );
   }
 }
